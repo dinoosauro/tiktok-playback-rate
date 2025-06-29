@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name        TikTok Playback Rate
-// @description Add an icon to change the playback rate of a video while browsing on TikTok
+// @description Add an icon to change the playback speed rate of a video while browsing on TikTok
 // @match       *://*.tiktok.com/*
+// @license MIT
 // ==/UserScript==
 
     (() => {
