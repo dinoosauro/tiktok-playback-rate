@@ -46,7 +46,13 @@
         init();
     }).observe(document.documentElement, { attributeFilter: ["data-theme"], attributes: true })
     init();
-    new MutationObserver(() => { // Check if new videos are loaded
-        init();
-    }).observe(document.getElementById("column-list-container"), { childList: true });
+    function createScrollObserver() {
+        const div = document.getElementById("column-list-container");
+        if (!div) setTimeout(() => createScrollObserver(), 500); else {
+            new MutationObserver(() => { // Check if new videos are loaded
+                init();
+            }).observe(div, { childList: true });
+        }
+    }
+    createScrollObserver();
 })()
